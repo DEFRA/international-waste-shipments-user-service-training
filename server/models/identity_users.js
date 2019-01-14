@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (sequelize, DataTypes) => {
-  const indentityUsers = sequelize.define('indentity_users', {
+  const indentityUsers = sequelize.define('identity_users', {
     id: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,6 +32,10 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true
     },
     twofactorenabled: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true
+    },
+    lockoutenabled: {
       type: DataTypes.BOOLEAN,
       allowNull: true
     },

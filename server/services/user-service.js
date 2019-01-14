@@ -34,11 +34,16 @@ module.exports = {
       const [user, created] = await models.identity_users.upsert({
         id: request.payload.id,
         email: request.payload.email,
+        emailconfirmed: false,
         passwordhash: request.payload.password,
         phonenumber: request.payload.telephoneNumber,
+        phonenumberconfirmed: false,
         username: request.payload.email,
         firstName: request.payload.firstName,
-        surname: request.payload.lastName
+        surname: request.payload.lastName,
+        twofactorenabled: false,
+        lockoutenabled: false,
+        accessfailedcount: 0
       },
       {
         returning: true
