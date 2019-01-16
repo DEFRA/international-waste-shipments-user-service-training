@@ -8,7 +8,13 @@ const handlers = {
     return response
   },
   upsert: async (request, h) => {
-    let response = await userService.upsert(request, h)
+    let response
+    let exists = await userService.checkExists(request.payload.email)
+    if (exists) {
+      response = h.response(Error).code(400)
+    } else {
+      response = await userService.upsert(request, h)
+    }
     return response
   }
 }
