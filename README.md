@@ -1,21 +1,21 @@
 # International Waste Shipments User Service Training
 
-# Environment variables
+## Environment variables
 
-| name     | description      | required          | default |            valid            | notes |
-|----------|------------------|:-----------------:|---------|:---------------------------:|-------|
-| NODE_ENV | Node environment |    no             |         | development,test,production |       |
-| PORT     | Port number      |    no             |  3000   |                             |       |
-| IWS_POSTGRES_IWS_HOST       | Database host IP  |  no     | localhost                   |       |
-| IWS_POSTGRES_IWS_DATABASE   | Database name     |  yes    |                             |       |
-| IWS_POSTGRES_IWS_USER       | Database user     |  yes    |                             |       |
-| IWS_POSTGRES_IWS_PASSWORD   | Database password |         |                             |       |
+| name                      | description       | required | default   |            valid            | notes |
+|---------------------------|-------------------|:--------:|-----------|:---------------------------:|-------|
+| NODE_ENV                  | Node environment  |    no    |           | development,test,production |       |
+| PORT                      | Port number       |    no    | 3002      |                             |       |
+| IWS_POSTGRES_IWS_HOST     | Database host IP  |    no    | localhost |                             |       |
+| IWS_POSTGRES_IWS_DATABASE | Database name     |    yes   |           |                             |       |
+| IWS_POSTGRES_IWS_USER     | Database user     |    yes   |           |                             |       |
+| IWS_POSTGRES_IWS_PASSWORD | Database password |          |           |                             |       |
 
-# Prerequires
+## Prerequires
 
 Node v8+
 
-# Running the application
+## Running the application
 
 `$ node index.js`
 
