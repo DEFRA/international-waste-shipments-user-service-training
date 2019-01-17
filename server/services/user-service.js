@@ -1,6 +1,5 @@
 const models = require('../models')
 const uuid = require('uuid')
-const bcrypt = require('bcrypt');
 
 const STATUS_CREATED = 201
 const STATUS_OK = 200
@@ -31,7 +30,7 @@ module.exports = {
         const id = this.generateId()
         request.payload.id = id
         users[id] = request.payload
-      }      
+      }
 
       const [user, created] = await models.identity_users.upsert({
         id: request.payload.id,
@@ -60,22 +59,21 @@ module.exports = {
   generateId: function () {
     return uuid.v4()
   },
-  checkExists: function (email) {
+  checkExists: async function (email) {
     try {
       const user = await models.identity_users.findAll({
         where: {
-          email: request.params.email
+          email: email
         }
       })
-     return true
+      if (user.length > 0) {
+        return true
+      } else {
+        return false
+      }
     } catch (err) {
       console.log(err)
-      return false
-        }   
-    
+      return true
+    }
   }
-
-  
-
-
 }
